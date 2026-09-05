@@ -1,0 +1,22 @@
+name: Run Pytest
+on: [push] # this triggeres the actio every time a push is made to the repository
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # this spins up a linux server on linux for the job to run on
+
+    steps:
+      - uses: actions/checkout@v3 # this checks out the repository so that the workflow can access it
+
+      - name: set up python3.13
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.13
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest # this runs the tests in the repository using pytest
