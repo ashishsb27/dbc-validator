@@ -14,7 +14,9 @@ def check_signal_bounds(
         dict with 'valid' (bool) and 'message' (str)
     """
     if not isinstance(signal_name, str):
-        raise TypeError(f"signal_name must be a string, got {type(signal_name).__name__}")
+        raise TypeError(
+            f"signal_name must be a string, got {type(signal_name).__name__}"
+        )
     valid = min_val <= value <= max_val
 
     if valid:
