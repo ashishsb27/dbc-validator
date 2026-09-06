@@ -1,4 +1,5 @@
 import pytest
+
 from dbc_validtor import check_signal_bounds
 
 
