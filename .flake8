@@ -1,0 +1,10 @@
+# .flake8
+[flake8]
+# Increase allowed line length to a modern standard
+max-line-length = 150
+
+# Ignore specific non-critical errors (e.g., E203 whitespace before ':')
+extend-ignore = E203
+
+# Don't check virtual environments or hidden folders
+exclude = .git, __pycache__, venv, .venv

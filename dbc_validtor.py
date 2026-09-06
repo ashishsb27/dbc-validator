@@ -13,7 +13,6 @@ def check_signal_bounds(value: float, min_val: float, max_val: float, signal_nam
     """
     if not isinstance(signal_name, str):
         raise TypeError(f"signal_name must be a string, got {type(signal_name).__name__}")
-    
     valid = min_val <= value <= max_val
 
     if valid:
@@ -25,4 +24,4 @@ def check_signal_bounds(value: float, min_val: float, max_val: float, signal_nam
     return {
         "valid":   valid,
         "message": msg
-    }   
+    }
