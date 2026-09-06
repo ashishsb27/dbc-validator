@@ -1,4 +1,6 @@
-def check_signal_bounds(value: float, min_val: float, max_val: float, signal_name: str = "") -> dict:
+def check_signal_bounds(
+    value: float, min_val: float, max_val: float, signal_name: str = ""
+) -> dict:
     """
     Check if a CAN signal value is within the allowed [min, max] range.
 
@@ -12,7 +14,9 @@ def check_signal_bounds(value: float, min_val: float, max_val: float, signal_nam
         dict with 'valid' (bool) and 'message' (str)
     """
     if not isinstance(signal_name, str):
-        raise TypeError(f"signal_name must be a string, got {type(signal_name).__name__}")
+        raise TypeError(
+            f"signal_name must be a string, got {type(signal_name).__name__}"
+        )
     valid = min_val <= value <= max_val
 
     if valid:
@@ -21,7 +25,4 @@ def check_signal_bounds(value: float, min_val: float, max_val: float, signal_nam
         direction = "below minimum" if value < min_val else "above maximum"
         msg = f"{signal_name}: {value} is {direction} (allowed: {min_val}–{max_val})"
 
-    return {
-        "valid":   valid,
-        "message": msg
-    }
+    return {"valid": valid, "message": msg}
