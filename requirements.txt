@@ -1,3 +1,4 @@
 cantools
 pytest
 mypy
+flake8
