@@ -3,15 +3,24 @@ from dbc_validtor import check_signal_bounds
 
 
 def test_check_signal_bounds_within_limits():
-    assert check_signal_bounds(5.0, 0.0, 10.0, "ECU") == {"valid": True, "message": "ECU: 5.0 is within range [0.0, 10.0]"}
+    assert check_signal_bounds(5.0, 0.0, 10.0, "ECU") == {
+        "valid": True,
+        "message": "ECU: 5.0 is within range [0.0, 10.0]",
+    }
 
 
 def test_check_signal_bounds_below_min_limit():
-    assert check_signal_bounds(-1, 0, 10, "ECU") == {"valid": False, "message": "ECU: -1 is below minimum (allowed: 0–10)"}
+    assert check_signal_bounds(-1, 0, 10, "ECU") == {
+        "valid": False,
+        "message": "ECU: -1 is below minimum (allowed: 0–10)",
+    }
 
 
 def test_check_signal_bounds_above_max_limit():
-    assert check_signal_bounds(15, 0, 10, "ECU") == {"valid": False, "message": "ECU: 15 is above maximum (allowed: 0–10)"}
+    assert check_signal_bounds(15, 0, 10, "ECU") == {
+        "valid": False,
+        "message": "ECU: 15 is above maximum (allowed: 0–10)",
+    }
 
 
 def test_check_signal_bounds_with_non_numeric_value():

@@ -1,4 +1,6 @@
-def check_signal_bounds(value: float, min_val: float, max_val: float, signal_name: str = "") -> dict:
+def check_signal_bounds(
+    value: float, min_val: float, max_val: float, signal_name: str = ""
+) -> dict:
     """
     Check if a CAN signal value is within the allowed [min, max] range.
 
@@ -21,7 +23,4 @@ def check_signal_bounds(value: float, min_val: float, max_val: float, signal_nam
         direction = "below minimum" if value < min_val else "above maximum"
         msg = f"{signal_name}: {value} is {direction} (allowed: {min_val}–{max_val})"
 
-    return {
-        "valid":   valid,
-        "message": msg
-    }
+    return {"valid": valid, "message": msg}
