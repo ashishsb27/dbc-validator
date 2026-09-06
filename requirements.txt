@@ -1,6 +1,7 @@
 cantools
 pytest
 mypy
-# flake8
-# black
+flake8
+black
 ruff
+pre-commit
